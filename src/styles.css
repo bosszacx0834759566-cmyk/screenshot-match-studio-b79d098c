@@ -198,7 +198,7 @@ body { font-family: var(--font-sans); background: var(--ink); -webkit-font-smoot
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes pulse { 50% { opacity: .2; } }
 @keyframes dash { to { stroke-dashoffset: -32; } }
-.hero-title { font-size: clamp(56px, 12.5vw, 220px); font-weight: 600; line-height: 1.14; letter-spacing: -0.012em; }
+.hero-title { font-size: clamp(40px, 8vw, 140px); font-weight: 600; line-height: 1.14; letter-spacing: -0.012em; }
 .hero-sub { font-weight: 300; color: oklch(1 0 0 / 45%); }
 
 /* Ticker */
