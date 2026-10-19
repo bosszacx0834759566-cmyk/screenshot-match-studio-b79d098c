@@ -3,6 +3,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { ArrowDown, ArrowUpRight, Plus, X } from "lucide-react";
 import { Scramble } from "@/components/Scramble";
+import { OriginPanel } from "@/components/OriginPanel";
 import issVideo from "@/assets/iss-video.mp4.asset.json";
 import goddardImg from "@/assets/goddard.jpg.asset.json";
 import oppenheimerImg from "@/assets/oppenheimer.jpg.asset.json";
@@ -257,7 +258,7 @@ function Index() {
           </div>
           <div className="mt-24 grid gap-10 md:grid-cols-2">
             <figure className="founder-card reveal" style={{ transitionDelay: "0ms" }}>
-              <div className="founder-media"><img src={goddardImg.url} alt="Robert H. Goddard" loading="lazy" /></div>
+              <OriginPanel src={goddardImg.url} alt="Robert H. Goddard" code="GH-01" tag="SPACE" coords="42.2626° N / 71.8023° W" year="1926" />
               <figcaption className="mt-8">
                 <div className="flex items-baseline justify-between gap-6">
                   <span className="display-lg">GOD</span>
@@ -268,7 +269,7 @@ function Index() {
               </figcaption>
             </figure>
             <figure className="founder-card reveal" style={{ transitionDelay: "120ms" }}>
-              <div className="founder-media"><img src={oppenheimerImg.url} alt="J. Robert Oppenheimer" loading="lazy" /></div>
+              <OriginPanel src={oppenheimerImg.url} alt="J. Robert Oppenheimer" code="GH-02" tag="DEFENSE" coords="35.8800° N / 106.3031° W" year="1943" />
               <figcaption className="mt-8">
                 <div className="flex items-baseline justify-between gap-6">
                   <span className="display-lg">HEIMER</span>
