@@ -280,7 +280,7 @@ function Index() {
               </figcaption>
             </figure>
           </div>
-          <p className="body-copy reveal mt-16 max-w-3xl text-paper/60">Our startup works at the intersection of space technology and defense technology — so the name reads as one word in English, <span className="font-semibold text-paper">GodHeimer</span>: God + Heimer.</p>
+          <p className="body-copy reveal mx-auto mt-16 max-w-3xl text-center text-paper/60">Our startup works at the intersection of space technology and defense technology — so the name reads as one word in English, <span className="font-semibold text-paper">GodHeimer</span>: God + Heimer.</p>
         </div>
       </section>
 
