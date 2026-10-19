@@ -296,39 +296,16 @@ body { font-family: var(--font-sans); background: var(--ink); -webkit-font-smoot
 .founder-card:hover .founder-media img { filter: grayscale(.2) contrast(1.02); transform: scale(1.03); }
 
 /* Origin panels (The Name section) */
-.origin-panel { --p: 0; --mx: 50%; --my: 50%; position: relative; aspect-ratio: 4 / 5; cursor: crosshair; color: var(--paper); }
+.origin-panel { --p: 0; position: relative; aspect-ratio: 4 / 5; color: var(--paper); }
 .origin-aperture { position: absolute; inset: 0; overflow: hidden; background: var(--ink-2);
-  clip-path: inset(calc((1 - var(--p)) * 18%) calc((1 - var(--p)) * 12%) round 2px); transition: clip-path .1s linear; }
+  clip-path: inset(calc((1 - var(--p)) * 14%) calc((1 - var(--p)) * 10%)); }
 .origin-img { position: absolute; inset: -8% 0; width: 100%; height: 116%; object-fit: cover;
-  transform: translateY(calc((0.5 - var(--p)) * 10%)) scale(calc(1.25 - var(--p) * 0.15));
-  filter: grayscale(1) contrast(1.15) brightness(.55); }
-.origin-lens { filter: grayscale(.2) contrast(1.2) brightness(1.05); opacity: 0;
-  clip-path: circle(0px at var(--mx) var(--my)); transition: clip-path .5s var(--ease-out), opacity .3s; }
-.origin-panel:hover .origin-lens { opacity: 1; clip-path: circle(22% at var(--mx) var(--my)); }
-.origin-scan { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: overlay;
-  background: repeating-linear-gradient(0deg, oklch(1 0 0 / 7%) 0 1px, transparent 1px 3px); }
-.origin-scan::after { content: ""; position: absolute; inset: 0 0 auto; height: 30%;
-  background: linear-gradient(180deg, transparent, oklch(1 0 0 / 10%), transparent); animation: origin-sweep 4.5s linear infinite; }
-@keyframes origin-sweep { from { transform: translateY(-100%); } to { transform: translateY(400%); } }
-.origin-grid { position: absolute; inset: 0; opacity: calc(var(--p) * .5); pointer-events: none;
-  background-image: linear-gradient(var(--line-dark) 1px, transparent 1px), linear-gradient(90deg, var(--line-dark) 1px, transparent 1px);
-  background-size: 12.5% 10%; mask-image: radial-gradient(circle at var(--mx) var(--my), oklch(0 0 0) 0, transparent 45%); }
-.origin-reticle { position: absolute; left: var(--mx); top: var(--my); width: 88px; height: 88px; translate: -50% -50%;
-  border: 1px solid oklch(1 0 0 / 60%); border-radius: 50%; opacity: 0; scale: .6; pointer-events: none;
-  transition: opacity .3s, scale .5s var(--ease-out); }
-.origin-reticle::before, .origin-reticle::after { content: ""; position: absolute; background: var(--paper); }
-.origin-reticle::before { left: 50%; top: -14px; bottom: -14px; width: 1px; }
-.origin-reticle::after { top: 50%; left: -14px; right: -14px; height: 1px; }
-.origin-reticle span { position: absolute; inset: 40%; border-radius: 50%; background: var(--paper); }
-.origin-panel:hover .origin-reticle { opacity: 1; scale: 1; }
+  transform: translateY(calc((0.5 - var(--p)) * 10%)) scale(calc(1.2 - var(--p) * 0.12));
+  filter: grayscale(1) contrast(1.05); transition: filter 1.2s var(--ease-out); }
+.origin-panel:hover .origin-img { filter: grayscale(.6) contrast(1.05); }
+.origin-aperture::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, oklch(0 0 0 / 45%), transparent 22%, transparent 75%, oklch(0 0 0 / 55%)); }
 .origin-hud { position: absolute; inset: 0; pointer-events: none; font-size: 11px; letter-spacing: .08em; opacity: calc(var(--p) * 1.4 - .3); }
 .origin-hud > span { position: absolute; padding: 18px 20px; color: oklch(1 0 0 / 75%); }
-.origin-hud-tl { top: 0; left: 0; } .origin-hud-tr { top: 0; right: 0; }
-.origin-hud-bl { bottom: 0; left: 0; } .origin-hud-br { bottom: 0; right: 0; color: var(--paper) !important; }
-.origin-corner { position: absolute; width: 18px; height: 18px; border: 0 solid var(--paper); pointer-events: none;
-  transition: transform .5s var(--ease-out); }
-.c1 { top: -6px; left: -6px; border-width: 1px 0 0 1px; } .c2 { top: -6px; right: -6px; border-width: 1px 1px 0 0; }
-.c3 { bottom: -6px; left: -6px; border-width: 0 0 1px 1px; } .c4 { bottom: -6px; right: -6px; border-width: 0 1px 1px 0; }
-.origin-panel:hover .c1 { transform: translate(-6px,-6px); } .origin-panel:hover .c2 { transform: translate(6px,-6px); }
-.origin-panel:hover .c3 { transform: translate(-6px,6px); } .origin-panel:hover .c4 { transform: translate(6px,6px); }
-@media (prefers-reduced-motion: reduce) { .origin-scan::after { animation: none; } .origin-aperture, .origin-img { clip-path: none; transform: none; } }
+.origin-hud-tl { top: 0; left: 0; } .origin-hud-tr { top: 0; right: 0; } .origin-hud-bl { bottom: 0; left: 0; }
+@media (prefers-reduced-motion: reduce) { .origin-aperture, .origin-img { clip-path: none; transform: none; } }
